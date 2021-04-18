@@ -1,0 +1,3 @@
+[submodule "IML.HUJI"]
+	path = IML.HUJI
+	url = git@github.com:GreenGilad/IML.HUJI.git
