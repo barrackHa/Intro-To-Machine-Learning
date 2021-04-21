@@ -1,0 +1,15 @@
+version: "3"
+services:
+    jpnb:
+        image: iml_jpnb
+        build: 
+            context: ./
+            dockerfile: Dockerfile
+            args: 
+                port: 8800
+        ports: 
+            - "8800:8800"
+        volumes:
+            - ../IML.HUJI:/notebook
+            - ../sol:/notebook/sol
+
