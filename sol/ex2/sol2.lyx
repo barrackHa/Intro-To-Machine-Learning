@@ -167,145 +167,69 @@ status open
 
 \begin_layout Paragraph
 1.
- Denote 
-\begin_inset Formula $X=\left[\begin{array}{ccc}
-| & \cdots & |\\
-x_{1} & \cdots & x_{d}\\
-| & \cdots & |
-\end{array}\right],$
-\end_inset
-
- specifically 
-\begin_inset Formula $x_{1},...,x_{d}$
-\end_inset
-
- are the column vectors of 
-\begin_inset Formula $X$
-\end_inset
-
-.
- So - 
-\begin_inset Formula $X^{T}=\left[\begin{array}{ccc}
-- & x_{1} & -\\
-\cdots & \cdots & \cdots\\
-- & x_{d} & -
-\end{array}\right]$
-\end_inset
-
- and 
-\begin_inset Formula $X^{T}X=\left[\begin{array}{ccc}
-<x_{1},x_{1}> & \cdots & <x_{1},x_{d}>\\
-\vdots & \ddots & \vdots\\
-<x_{d},x_{1}> & \cdots & <x_{d},x_{d}>
-\end{array}\right]$
-\end_inset
-
-.
  Let 
-\begin_inset Formula $v\in\mathbb{R}^{d}$
+\begin_inset Formula $v\in Ker(X)$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $Xv=0$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $X^{T}Xv=X^{T}0=0$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $v\in Ker(X^{T}X)$
+\end_inset
+
+.
+ On the other direction, let 
+\begin_inset Formula $v\in Ker(X^{T}X)$
 \end_inset
 
 .
  
-\begin_inset Formula 
-\[
-X^{T}Xv=\left[\begin{array}{ccc}
-<x_{1},x_{1}> & \cdots & <x_{1},x_{d}>\\
-\vdots & \ddots & \vdots\\
-<x_{d},x_{1}> & \cdots & <x_{d},x_{d}>
-\end{array}\right]\left[\begin{array}{c}
-v_{1}\\
-\vdots\\
-v_{d}
-\end{array}\right]=\left[\begin{array}{c}
-\sum_{k=1}^{d}<x_{1},x_{k}>*v_{k}\\
-\vdots\\
-\sum_{k=1}^{d}<x_{d},x_{k}>*v_{k}
-\end{array}\right]=
-\]
-
+\begin_inset Formula $X^{T}Xv=0$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Paragraph
-\begin_inset Formula 
-\[
-=\left[\begin{array}{c}
-<x_{1},\sum_{k=1}^{d}v_{k}x_{k}>\\
-\vdots\\
-<x_{d},\sum_{k=1}^{d}v_{k}x_{k}>
-\end{array}\right]=\left[\begin{array}{c}
-<x_{1},Xv>\\
-\vdots\\
-<x_{d},Xv>
-\end{array}\right]
-\]
-
+ 
+\begin_inset Formula $\Rightarrow$
 \end_inset
 
-and the one before last equality holds because of the properties of 
+ 
+\begin_inset Formula $(Xv)^{T}(Xv)=v^{T}X^{T}Xv=v^{T}0=0$
+\end_inset
+
+, meaning 
+\begin_inset Formula $0=<Xv,Xv>$
+\end_inset
+
+ and positive-definiteness of 
 \begin_inset Formula $<,>$
 \end_inset
 
- over 
-\begin_inset Formula $\mathbb{R}$
-\end_inset
-
-.
- Now, if 
-\begin_inset Formula $v\in ker(X)$
-\end_inset
-
-, 
+ implies that 
 \begin_inset Formula $Xv=0$
 \end_inset
 
  and so 
-\begin_inset Formula $X^{T}Xv=X^{T}*0=0$
+\begin_inset Formula $v\in Ker(X)$
 \end_inset
 
 .
- On the other hand, if 
-\begin_inset Formula $v\in ker(X^{T}X)$
-\end_inset
-
-, we get 
-\begin_inset Formula $d$
-\end_inset
-
- different equations - 
-\begin_inset Formula $<x_{i},Xv>=0$
-\end_inset
-
-.
- If there is at least one column of 
-\begin_inset Formula $X$
-\end_inset
-
- - 
-\begin_inset Formula $1\le i\le d$
-\end_inset
-
- such that 
-\begin_inset Formula $x_{i}\ne0$
-\end_inset
-
-, we get that 
-\begin_inset Formula $Xv=0$
-\end_inset
-
- due to the positivity of 
-\begin_inset Formula $<,>$
-\end_inset
-
-.
- Else, 
-\begin_inset Formula $X$
-\end_inset
-
- is the 0 matrix and the claim also holds.
 \end_layout
 
 \begin_layout Paragraph
@@ -314,12 +238,53 @@ and the one before last equality holds because of the properties of
 \begin_inset Formula $v\in Im(A^{T})$
 \end_inset
 
+, so there exists a 
+\begin_inset Formula $w$
+\end_inset
+
+ such that 
+\begin_inset Formula $A^{T}w=v$
+\end_inset
+
 .
- We want to show 
-\begin_inset Formula $v\in Ker(A)^{\bot}=\{w\:|\:<w,v>=0\::\:\forall v\in Ker(A)\}$
+ Let 
+\begin_inset Formula $a\in Ker(A)$
+\end_inset
+
+, so 
+\begin_inset Formula $<v,a>=<A^{T}w,a>=<w,Aa>=<w,0>=0$
+\end_inset
+
+.
+ We get that 
+\begin_inset Formula $v\in Ker(A)^{\bot}$
+\end_inset
+
+ I.E.
+ 
+\begin_inset Formula $Im(A^{T})\subseteq Ker(A)^{\bot}$
+\end_inset
+
+.
+ On the other direction, let 
+\begin_inset Formula $v\in Ker(A)^{\bot}$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $\forall a\in Ker(A)$
+\end_inset
+
+ : 
+\begin_inset Formula $<v,a>=0$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Paragraph
+3.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -340,6 +305,180 @@ Projection Matrices
 \begin_layout Paragraph
 5.a.
  
+\begin_inset Formula $P^{T}=(\sum v_{i}v_{i}^{T})^{T}=\sum(v_{i}v_{i}^{T})^{T}=\sum(v_{i}^{T})^{T}(v_{i})^{T}=\sum v_{i}v_{i}^{T}=P$
+\end_inset
+
+.
+ I.E.
+ P is symmetric.
+\end_layout
+
+\begin_layout Paragraph
+5.b.
+ For 
+\begin_inset Formula $v_{n}\in\{v1,...,v_{k}\}$
+\end_inset
+
+, 
+\begin_inset Formula $Pv_{n}=(\sum v_{i}v_{i}^{T})\cdot v_{n}=\sum(v_{i}\otimes v_{i}^{T}\cdot v_{n})=\sum_{i\ne n}(v_{i}\otimes v_{i}^{T}\cdot v_{n})\ +v_{n}\otimes v_{n}^{T}\cdot v_{n}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+v_{i}\otimes v_{i}^{T}=\left[\begin{array}{ccc}
+v_{i,1}v_{i,1} & \cdots & v_{i,1}v_{i,k}\\
+\vdots & \ddots & \vdots\\
+v_{i,k}v_{i,1} & \cdots & v_{i,k}v_{i,k}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+v_{i}\otimes v_{i}^{T}\cdot v_{n}=\left[\begin{array}{ccc}
+v_{i,1}v_{i,1} & \cdots & v_{i,1}v_{i,k}\\
+\vdots & \ddots & \vdots\\
+v_{i,k}v_{i,1} & \cdots & v_{i,k}v_{i,k}
+\end{array}\right]\left[\begin{array}{c}
+v_{n,1}\\
+\vdots\\
+v_{n,k}
+\end{array}\right]=\left[\begin{array}{c}
+\sum_{j}v_{i,1}v_{i,j}v_{n,j}\\
+\vdots\\
+\sum_{j}v_{k,1}v_{i,j}v_{n,j}
+\end{array}\right]=\left[\begin{array}{c}
+v_{i,1}\sum_{j}v_{i,j}v_{n,j}\\
+\vdots\\
+v_{k,1}\sum_{j}v_{i,j}v_{n,j}
+\end{array}\right]=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left[\begin{array}{c}
+v_{i,1}\sum_{j}v_{i,j}v_{n,j}\\
+\vdots\\
+v_{k,1}\sum_{j}v_{i,j}v_{n,j}
+\end{array}\right]=\left[\begin{array}{c}
+v_{i,1}<v_{i},v_{n}>\\
+\vdots\\
+v_{k,1}<v_{i},v_{n}>
+\end{array}\right]
+\]
+
+\end_inset
+
+Note that 
+\begin_inset Formula $<v_{i},v_{n}>=\begin{cases}
+\begin{array}{c}
+1\\
+0
+\end{array} & \begin{array}{c}
+i=n\\
+else
+\end{array}\end{cases}$
+\end_inset
+
+ because 
+\begin_inset Formula $v_{1},...,v_{k}$
+\end_inset
+
+are orthonormal and so 
+\begin_inset Formula $Pv_{n}=\sum_{i\ne n}(v_{i}\otimes v_{i}^{T}\cdot v_{n})\ +v_{n}\otimes v_{n}^{T}\cdot v_{n}=v_{n}\otimes v_{n}^{T}\cdot v_{n}=\left[\begin{array}{c}
+v_{n,1}*1\\
+\vdots\\
+v_{n,k}*1
+\end{array}\right]=v_{n}$
+\end_inset
+
+.
+ And so, for every n, 
+\begin_inset Formula $v_{n}$
+\end_inset
+
+ is an eigenvector of P corresponding to an eigenvalue of 1.
+\end_layout
+
+\begin_layout Paragraph
+5.c.
+ From 5.b.
+ we know that for all 
+\begin_inset Formula $i=1,..,k$
+\end_inset
+
+ it holds that 
+\begin_inset Formula $Pv_{i}=v_{i}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $v=\sum\alpha_{i}v_{i}\in V$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+Pv=P\cdot(\sum\alpha_{i}v_{i})=\sum\alpha_{i}Pv_{i}=\sum\alpha_{i}v_{i}=v
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+5.d.
+ From 5.b.
+ we know that there is a unitary U such that 
+\begin_inset Formula $P=UIU^{T}$
+\end_inset
+
+.
+ So, 
+\begin_inset Formula $P^{2}=(UIU^{T})(UIU^{T})=UIU^{T}UIU^{T}=UIU^{T}=P$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+5.e.
+ 
+\begin_inset Formula $(I-P)P=P-P^{2}\underset{5.d}{=}P-P=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Least Squares
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pasted4.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+6.
+ 
+\begin_inset Formula $X^{T}X$
+\end_inset
+
+
 \end_layout
 
 \end_body
