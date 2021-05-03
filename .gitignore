@@ -1,6 +1,7 @@
 # Lyx tmp files
 *.lyx~
 *.lyx#
+*.lyx.emergency
 *.png
 
 # Byte-compiled / optimized / DLL files
