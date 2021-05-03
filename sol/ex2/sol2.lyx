@@ -442,7 +442,7 @@ Pv=P\cdot(\sum\alpha_{i}v_{i})=\sum\alpha_{i}Pv_{i}=\sum\alpha_{i}v_{i}=v
 
 .
  So, 
-\begin_inset Formula $P^{2}=(UIU^{T})(UIU^{T})=UIU^{T}UIU^{T}=UIU^{T}=P$
+\begin_inset Formula $P^{2}=(UIU^{T})(UIU^{T})=UI(U^{T}U)IU^{T}=UI^{2}U^{T}=UIU^{T}=P$
 \end_inset
 
 .
@@ -474,11 +474,21 @@ Least Squares
 
 \begin_layout Paragraph
 6.
- 
-\begin_inset Formula $X^{T}X$
+ From 1 we know 
+\begin_inset Formula $Ker(X)=Ker(X^{T}X)$
 \end_inset
 
+.
+ So, it's enough to show that 
+\begin_inset Formula $Ker(X)$
+\end_inset
 
+ is not trivial.
+ We know this is the case as 
+\begin_inset Formula $\sigma_{i}=0$
+\end_inset
+
+ for some i.
 \end_layout
 
 \end_body
