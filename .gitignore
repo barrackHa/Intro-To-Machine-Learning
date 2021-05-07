@@ -1,3 +1,6 @@
+# Ignore MNIST dataDB
+mnist-original.mat
+
 # Lyx tmp files
 *.lyx~
 *.lyx#
