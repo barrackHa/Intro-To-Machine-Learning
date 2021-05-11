@@ -1,5 +1,6 @@
 # Ignore MNIST dataDB
 mnist-original.mat
+dataset
 
 # Lyx tmp files
 *.lyx~
